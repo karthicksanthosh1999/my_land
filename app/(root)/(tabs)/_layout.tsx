@@ -1,26 +1,51 @@
-import { Icon, Label, NativeTabs } from "expo-router/unstable-native-tabs";
+import { Feather, FontAwesome, Ionicons } from "@expo/vector-icons";
+import { Tabs } from "expo-router";
 
-const TabLayouts = () => {
+export default function TabLayout() {
   return (
-    <NativeTabs>
-      <NativeTabs.Trigger name="index">
-        <Label>Home</Label>
-        <Icon sf={"house.fill"} />
-      </NativeTabs.Trigger>
-      <NativeTabs.Trigger name="search">
-        <Label>Search</Label>
-        <Icon sf={"magnifyingglass"} />
-      </NativeTabs.Trigger>
-      <NativeTabs.Trigger name="saved">
-        <Label>Saved</Label>
-        <Icon sf={"heart.fill"} />
-      </NativeTabs.Trigger>
-      <NativeTabs.Trigger name="profile">
-        <Label>Profile</Label>
-        <Icon sf={"person.fill"} />
-      </NativeTabs.Trigger>
-    </NativeTabs>
+    <Tabs
+      screenOptions={{
+        tabBarStyle: {
+          backgroundColor: "black",
+        },
+        tabBarActiveTintColor: "white",
+      }}>
+      <Tabs.Screen
+        name="index"
+        options={{
+          title: "Home",
+          tabBarIcon: ({ color }) => (
+            <FontAwesome size={28} name="home" color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="search"
+        options={{
+          title: "Search",
+          tabBarIcon: ({ color }) => (
+            <FontAwesome size={28} name="search" color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="saved"
+        options={{
+          title: "Saved",
+          tabBarIcon: ({ color }) => (
+            <Feather name="heart" size={28} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="profile"
+        options={{
+          title: "Profile",
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="person-circle-outline" size={30} color={color} />
+          ),
+        }}
+      />
+    </Tabs>
   );
-};
-
-export default TabLayouts;
+}
