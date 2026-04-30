@@ -1,9 +1,10 @@
+import React from "react";
 import { Text, View } from "react-native";
 
-export default function Saved() {
+export default function SavedScreen() {
   return (
     <View>
-      <Text>Saved</Text>
+      <Text>SavedScreen</Text>
     </View>
   );
 }

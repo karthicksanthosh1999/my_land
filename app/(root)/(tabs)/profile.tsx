@@ -1,9 +1,10 @@
+import React from "react";
 import { Text, View } from "react-native";
 
-export default function Profile() {
+export default function ProfileScreen() {
   return (
     <View>
-      <Text>Hello Profile</Text>
+      <Text>ProfileScreen</Text>
     </View>
   );
 }
